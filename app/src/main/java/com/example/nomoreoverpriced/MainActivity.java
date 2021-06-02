@@ -31,18 +31,16 @@ public class MainActivity extends AppCompatActivity
     public void onMapReady(final GoogleMap googleMap) {
 
         mMap = googleMap;
+        for(int idx = 0; idx < 10; idx++) {
+            MarkerOptions markerOptions = new MarkerOptions();
+            markerOptions
+                    .position(new LatLng(37.52487 + idx, 126.92723))
+                    .title("마커" + idx);
 
-        LatLng SEOUL = new LatLng(37.56, 126.97);
+            mMap.addMarker(markerOptions);
+        }
 
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(SEOUL);
-        markerOptions.title("서울");
-        markerOptions.snippet("한국의 수도");
-        mMap.addMarker(markerOptions);
-
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(SEOUL, 10));
-
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(37.52487, 126.92723)));
 
     }
 
