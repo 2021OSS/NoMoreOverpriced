@@ -37,6 +37,12 @@ public class MainActivity extends AppCompatActivity
     private GoogleMap mMap;
     SQLiteDatabase database;
 
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Indent indent = new Indent(this, LoadingActivity.class);
+        startActivity(indent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
