@@ -24,11 +24,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import java.lang.String;
+import java.lang.Throwable;
 import static java.sql.DriverManager.println;
 
 
 public class MainActivity extends AppCompatActivity
-        implements OnMapReadyCallback {
+        implements
+            OnMapReadyCallback,
+            GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
     SQLiteDatabase database;
@@ -175,10 +179,19 @@ public class MainActivity extends AppCompatActivity
             mMap.addMarker(markerOptions);
         }
 
+        // 마커 클릭에 대한 이벤트 처리
+        mMap.setOnMarkerClickListener(this);
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(33.2238, 126.3350)));
         cursor.close();
 
     }
 
+    // onMarkerClick 구현
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        Toast.makeText(this, marker.getTitle() + "\n" + marker.getPosition(), Toast.LENGTH_SHORT).show();
+        return false;
+    }
 
 }
