@@ -1,12 +1,14 @@
 package com.example.nomoreoverpriced;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +17,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.BufferedInputStream;
@@ -37,12 +40,14 @@ public class MainActivity extends AppCompatActivity
     private GoogleMap mMap;
     SQLiteDatabase database;
 
+    /*
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Indent indent = new Indent(this, LoadingActivity.class);
+        Intent indent = new Intent(this, LoadingActivity.class);
         startActivity(indent);
     }
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +67,8 @@ public class MainActivity extends AppCompatActivity
         String databaseName = "good_shop.db";
         createDatabase(databaseName);
         //executeQuery();
+        Intent indent = new Intent(this, LoadingActivity.class);
+        startActivity(indent);
     }
 
     public boolean isCheckDB(){
@@ -161,7 +168,7 @@ public class MainActivity extends AppCompatActivity
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(37.52487, 126.92723)));
 */
         mMap = googleMap;
-        mMap.setMinZoomPreference(8.0f);
+        mMap.setMinZoomPreference(9.0f);
         Cursor cursor = database.rawQuery("select 업소분류, 업소명, 연락처, 지역, address, Latitude, Longitude, 대표품목가격, 영업상세, 휴무일, 데이터기준일자  from good_shop", null);
         int recordCount = cursor.getCount();
 
@@ -180,7 +187,7 @@ public class MainActivity extends AppCompatActivity
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions
                     .position(new LatLng(latitude, longitude))
-                    .title(storeName);
+                    .title(storeName + "\n" + address);
 
             mMap.addMarker(markerOptions);
         }
@@ -188,7 +195,7 @@ public class MainActivity extends AppCompatActivity
         // 마커 클릭에 대한 이벤트 처리
         mMap.setOnMarkerClickListener(this);
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(33.2238, 126.3350)));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(33.3838, 126.5550)));
         cursor.close();
 
     }
