@@ -9,11 +9,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
-
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.view.View;
+import android.view.LayoutInflater;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -35,7 +38,8 @@ import static java.sql.DriverManager.println;
 public class MainActivity extends AppCompatActivity
         implements
             OnMapReadyCallback,
-            GoogleMap.OnMarkerClickListener {
+            GoogleMap.OnInfoWindowClickListener
+        {
 
     private GoogleMap mMap;
     SQLiteDatabase database;
@@ -187,24 +191,27 @@ public class MainActivity extends AppCompatActivity
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions
                     .position(new LatLng(latitude, longitude))
-                    .title(storeName + "\n" + address);
+                    .title(storeName + "\n" + address)
+                    .snippet("대표품목 : " +  Price);
 
             mMap.addMarker(markerOptions);
+            mMap.setInfoWindowAdapter(new CustomInfoWindow(getLayoutInflater()));
+            mMap.setOnInfoWindowClickListener(this);
         }
 
-        // 마커 클릭에 대한 이벤트 처리
-        mMap.setOnMarkerClickListener(this);
 
+        // 마커 클릭에 대한 이벤트 처리
         mMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(33.3838, 126.5550)));
         cursor.close();
 
     }
 
+
     // onMarkerClick 구현
     @Override
-    public boolean onMarkerClick(Marker marker) {
+    public void onInfoWindowClick(Marker marker) {
         Toast.makeText(this, marker.getTitle() + "\n" + marker.getPosition(), Toast.LENGTH_SHORT).show();
-        return false;
     }
+
 
 }
