@@ -9,17 +9,17 @@
 
 ## 사용된 오픈소스
 
-- Google Maps Android API
+- [Google Maps Android API](https://developers.google.com/maps/documentation?hl=ko)
 
 ## 참여인원 및 역할
-[PM] 김선규 ksg0605 <https://github.com/ksg0605
+[PM] 김선규 [ksg0605](https://github.com/ksg0605)
 
 - 프로젝트 생성 및 관리
 - Google Maps API 추가
 - 주소를 위도, 경도로 바꿈
 
-고은비 gongbi00 <https://github.com/gongbi00>
+고은비 [gongbi00](https://github.com/gongbi00)
 
-신호경 HokoungShin <https://github.com/HokoungShin>
+신호경 [HokoungShin](https://github.com/HokoungShin)
 
 - README작성
