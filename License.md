@@ -5,7 +5,7 @@ Olive 와 고지문 사용에 따라 발생하는 모든 책임은 전적으로 
 
 # OSS Notice | NoMoreOverpriced #
 
-This application is Copyright © (owner name). All rights reserved.
+This application is Copyright © NoMoreOverpriced. All rights reserved.
 
 The following sets forth attribution notices for third party software that may be contained in this application.
 
