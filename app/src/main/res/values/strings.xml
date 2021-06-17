@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">No More Overpriced</string>
+    <string name="app_name">"바가지는 이제 그만"</string>
     <string name="optional">\@String</string>
     <string name="pickup_here">\@String</string>
     <string name="search">\@String</string>
