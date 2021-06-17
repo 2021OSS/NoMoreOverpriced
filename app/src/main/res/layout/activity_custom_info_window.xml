@@ -21,6 +21,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtPickupSnippet"
         android:text="@string/optional"
-        android:textStyle="bold"
+        android:singleLine="false"
         />
 </LinearLayout>
