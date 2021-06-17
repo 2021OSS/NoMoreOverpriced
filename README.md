@@ -23,6 +23,7 @@
 고은비 [gongbi00](https://github.com/gongbi00)
 
 - csv파일을 db파일로 변환
+- 검색기능 
 
 신호경 [HokoungShin](https://github.com/HokoungShin)
 
