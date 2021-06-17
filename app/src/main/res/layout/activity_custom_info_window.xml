@@ -10,17 +10,29 @@
     android:background="@android:color/white"
     >
 
+
     <TextView
         android:id="@+id/txtPickupInfo"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:drawablePadding="5dip"
+        android:text="@string/pickup_here"
+        android:textStyle="bold"
+        app:drawableLeftCompat="@drawable/ic_baseline_account_balance_24" />
+
+    <TextView
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pickup_here"
-        android:textStyle="bold" />
+        android:text="-----------------" />
+
     <TextView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/txtPickupSnippet"
         android:text="@string/optional"
+        app:drawableLeftCompat="@drawable/ic_baseline_info_24"
         android:singleLine="false"
         />
+
 </LinearLayout>
