@@ -26,4 +26,4 @@
 
 신호경 [HokoungShin](https://github.com/HokoungShin)
 
-- README작성
+- README.md 작성
