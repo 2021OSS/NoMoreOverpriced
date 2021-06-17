@@ -6,6 +6,7 @@
 
 ### 앱의 기능
 
+- 꽁냥꽁냥
 
 ## 사용된 오픈소스
 
@@ -26,6 +27,3 @@
 신호경 [HokoungShin](https://github.com/HokoungShin)
 
 - README작성
-
-## 라이센스
-> Apache License 2.0
