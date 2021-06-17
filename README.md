@@ -16,9 +16,12 @@
 
 - 프로젝트 생성 및 관리
 - Google Maps API 추가
-- 주소를 위도, 경도로 바꿈
+- 주소를 위도, 경도로 바꾸기
+- 로딩 화면 구현
 
 고은비 [gongbi00](https://github.com/gongbi00)
+
+- csv파일을 db파일로 변환
 
 신호경 [HokoungShin](https://github.com/HokoungShin)
 
