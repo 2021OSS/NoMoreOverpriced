@@ -19,7 +19,7 @@
 - 주소를 위도, 경도로 바꾸기
 - 로딩 화면 구현
 
-고은비 [gongbi00](https://github.com/gongbi00)
+고은빈 [gongbi00](https://github.com/gongbi00)
 
 - csv파일을 db파일로 변환
 - 검색기능 
