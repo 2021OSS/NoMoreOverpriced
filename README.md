@@ -26,3 +26,6 @@
 신호경 [HokoungShin](https://github.com/HokoungShin)
 
 - README작성
+
+## 라이센스
+> Apache License 2.0
