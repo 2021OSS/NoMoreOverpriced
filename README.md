@@ -1,5 +1,6 @@
 # NoMoreOverpriced
 # 바가지는 이제 그만!
+![loading_image](https://user-images.githubusercontent.com/64388948/122505401-3e2f5480-d037-11eb-8386-3819d80e6f99.png)
 ## 앱 소개
 
 제주 관광지의 물가가 비싸다고 하는 관광객들에게 현지에 저렴하고 맛있는 식당을 소개하기 위한 앱
